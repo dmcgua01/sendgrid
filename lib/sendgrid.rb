@@ -254,7 +254,7 @@ module SendGrid
       header_opts[:filters] = filters if filters && !filters.empty?
     end
 
-    header_opts.to_json.gsub(/(["\]}])([,:])(["\[{])/, '\\1\\2 \\3')
+    header_opts.to_json.gsub(/(["\]}])([,:])(["\[{])/, '\\1\\2\\3')
   end
 
   def filters_hash_from_options(enabled_opts, disabled_opts)
